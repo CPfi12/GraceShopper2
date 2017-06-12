@@ -94,7 +94,7 @@ export const deleteUser = (userId) =>
 
       .catch(err => console.error)
 
-      .catch(err => console.error)
+      .catch(err => console.error) // delete meee
 
 export const updateUser = (credentials, userId) =>
 

@@ -47,6 +47,7 @@ const Users = ({users, fetchUsers}, props) => {
 
           </thead>
 
+        {/* users.length: we don't need this ternary becasue it defaults to an array in our user reducer. if we were going to do something like this, recommend `&&` */}
           {users.length ? users.map((user, index) => {
 
             return (

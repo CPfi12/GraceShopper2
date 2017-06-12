@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+// change extension to .jsx here
+
 class Products extends React.Component {
   constructor(props) {
     super(props)
@@ -31,14 +33,14 @@ class Products extends React.Component {
           </div>
           <div className="col-md-8">
           <h1>Products</h1>
-          {
+          { {/* don't need the products.length --KHCL */}
             products.length && products.map((product) => {
               return (
                 <div key={product.id} className="col-md-4">
                 <Link to={`/products/${product.id}`}>
                   <p>{product.name}</p>
                   <img style={stylePref} src={product.imageUrl}/>
-                  <p>Price: {product.price}</p>
+                  <p>Price: ${product.price}</p>
                 </Link>
                 </div>
                 )

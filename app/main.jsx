@@ -32,9 +32,12 @@ const ExampleApp = connect(
 )
 
 const onProductsEnter = () => {
-  store.dispatch(loadProducts())
+  store.dispatch(loadProducts()) //fetchProducts vs. loadProducts; try to keep consistent --KHCL
 }
 
+// line 46 isn't doing anything that we want. onEnter takes a function and invokes it with nextstate.router.params. we want to something like onProductsEnter instead of just `fetchUsers`
+
+// change the name ExampleApp component
 
 render(
 

@@ -7,6 +7,7 @@ class Product extends React.Component {
   }
   render() {
     let product = this.props.product
+    // this styling should be in the css --KHCL
     let stylePref = {
       width: '100px',
       height: '100px'
@@ -20,8 +21,8 @@ class Product extends React.Component {
                 <p>Price: {product.price}</p>
                 <button>Add Product to Cart</button>
             </div>
-         
-       
+
+
 
     )
   }
@@ -29,9 +30,12 @@ class Product extends React.Component {
 
 import {connect} from 'react-redux'
 const filterProducts = (products, productId) => {
+  // get rid of these logs --KHCL
   console.log('products', products)
   console.log('prodId', productId)
   console.log('filtering!!!')
+
+  //look at using array.find or array.indexOf instead of array.filter --KHCL
   var productArr = products.filter((product) => product.id===(+productId))
   console.log(productArr)
   return productArr[0]

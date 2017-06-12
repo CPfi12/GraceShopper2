@@ -12,8 +12,9 @@ export const Login = ({ login, thirdPartyLogin }) => (
     </form>
     <br/>
     <button onClick={evt => { thirdPartyLogin('google')}}>log in with google</button>
-        <button onClick={evt => { thirdPartyLogin('github')}}>log in with github</button>
-            <button onClick={evt => { thirdPartyLogin('facebook')}}>log in with facebook</button>
+    <button onClick={evt => { thirdPartyLogin('github')}}>log in with github</button>
+    <button onClick={evt => { thirdPartyLogin('facebook')}}>log in with facebook</button>
+    <a href="/api/auth/login/google">GOOGLE</a>
   </div>
 )
 

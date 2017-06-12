@@ -114,6 +114,8 @@ class SingleUser extends Component {
 
                     <div className="col-sm-5 col-xs-6 tital "><button onClick={()=>this.ClickHandler
 
+                      {/* maybe a ternary based on whether admin or not --KHCL */}
+
                       (this.props.user.id)} type="button" className="btn">Delete</button>
 
                       </div>
@@ -130,7 +132,7 @@ class SingleUser extends Component {
 
               <option >admin</option>
 
-              <option>uset</option>
+              <option>user</option>
 
               </select>
 
@@ -177,7 +179,7 @@ class SingleUser extends Component {
     evt.preventDefault()
 
     console.log("FSFS", evt.target.role.value)
-
+    // this should give admin or user. make some sort of admin that evaluates to true/false. `event`.target.role.value === 'admin'` --KHCL
     let credentials = {role: evt.target.role.value}
 
     updateUser(id, credentials)

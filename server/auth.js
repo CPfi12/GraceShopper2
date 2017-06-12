@@ -51,8 +51,8 @@ OAuth.setupStrategy({
   provider: 'google',
   strategy: require('passport-google-oauth').OAuth2Strategy,
   config: {
-    clientID: env.GOOGLE_CLIENT_ID,
-    clientSecret: env.GOOGLE_CLIENT_SECRET,
+    clientID: "522190171511-tqf70s9h46gcapr5ofqs585mf1jai7vg.apps.googleusercontent.com",
+    clientSecret: "0ybG8ufL4SaQqqJPH5SHsrOu",
     callbackURL: `${app.baseUrl}/api/auth/login/google`,
   },
   passport
@@ -101,7 +101,7 @@ auth.get('/whoami', (req, res) => res.send(req.user))
 // maybe add a fail redirect to a signup page?
 auth.post('/login/local', (req, res, next) => {
 const {email, password} = req.body;
-    console.log('email:', email, 'password:', password)  
+    console.log('email:', email, 'password:', password)
    User.findOne({
       where: {email},
       attributes: {include: ['password_digest']}
@@ -142,7 +142,7 @@ auth.post('/signup', (req, res, next) => {
 auth.get('/login/:strategy', (req, res, next) => {
   console.log('in AUTH DOT GET')
   passport.authenticate(req.params.strategy,  {
-    
+
     scope: 'email', // You may want to ask for additional OAuth scopes. These are
                     // provider specific, and let you access additional data (like
                     // their friends or email), or perform actions on their behalf.
