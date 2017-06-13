@@ -12,6 +12,7 @@ import Login from './Login'
 import WhoAmI from './WhoAmI'
 import NotFound from './NotFound'
 import Orders from './Orders'
+import Cart from './Cart'
 import AppContainer from './AppContainer'
 import { loadOrders } from '../reducers/orders'
 
@@ -21,8 +22,9 @@ import { loadOrders } from '../reducers/orders'
 const Routes = ({ fetchOrders }) => (
      <Router history={browserHistory}>
       <Route path="/" component={AppContainer}>
-        <Route path="/foobar" component={NavBar} />
+        <Route path="/foobar" component={NavBar} onEnter={fetchOrders}/>
         <Route path="/orders" component={Orders} onEnter={fetchOrders} />
+        <Route path="/cart" component={Cart} onEnter={fetchOrders} />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>

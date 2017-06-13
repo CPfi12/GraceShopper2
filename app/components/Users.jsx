@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import {} from 'APP/app/reducers/auth'
 import {connect} from 'react-redux'
+
 import {fetchUsers, deleteUser} from '../reducers/users'
 import {Link} from 'react-router'
 // only the  user names are "links" because formatting kept getting messed up when i wrapped
 //each row (with email, role and name ) in Link tags.
-const Users = ({users}, props) => {
-  // console.log('!!!!!!!!!!!')
-  // console.log('usr', users)
-  // console.log('bla')
-  // console.log('???')
+
+
+const Users = ({users, fetchUsers}, props) => {
+
   if (users.role === 'user') {
     return <div>!</div>
   }

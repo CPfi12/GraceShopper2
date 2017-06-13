@@ -16,9 +16,9 @@ class Products extends React.Component {
   }
 
   render() {
-    console.log('in products?????',this.props.filtered,this.products)
+
     let products = this.props.products.filter((prod)=> this.props.filtered.indexOf(prod.categories)!==-1)
-    console.log('PRODUCTS',products)
+
     let stylePref = {
       width: '100px',
       height: '100px'

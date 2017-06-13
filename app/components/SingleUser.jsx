@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {deleteUser, updateUser} from '../reducers/users'
 import _ from 'lodash'
+
+
 class SingleUser extends Component {
   constructor(props) {
     super(props)
@@ -9,7 +11,6 @@ class SingleUser extends Component {
     this.SubmitHandler = this.SubmitHandler.bind(this)
   }
   render(){
- {console.log(this.props, "props", this.props.user, '**',  this.props.auth.role )}
     if (!this.props.user) return <div />
     return (
       <div className="container">
@@ -81,14 +82,11 @@ class SingleUser extends Component {
     )
   }
   ClickHandler(userId) {
-    console.log(userId, 'UserId', deleteUser)
-    console.log("DSDS")
     this.props.deleteUser(userId)
-    console.log("invoked")
   }
   SubmitHandler(evt, userId) {
     evt.preventDefault()
-    console.log("FSFS", evt.target.role.value)
+
     let credentials = {role: evt.target.role.value}
     this.props.updateUser(userId)
   }

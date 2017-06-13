@@ -14,10 +14,11 @@ const update = (user) => ({type:UPDATE, user })
 const userReducer = (users=initialState, action) => {
   switch (action.type) {
   case GET_USERS:
+
     //console.log('in reducer???')
+
     return action.users
   case DEL_USERS:
-  //console.log("DEL", action.users, action, "&%&%&")
     return users.filter(user => user.id !== action.id)
   case UPDATE:
   console.log("update!!!!!!", users)
@@ -33,7 +34,6 @@ export const fetchUsers = () =>
 dispatch =>
     axios.get('/api/users')
       .then(response => {
-        console.log( dispatch)
         const users = response.data
         store.dispatch(getAllUsers(users))
       })
