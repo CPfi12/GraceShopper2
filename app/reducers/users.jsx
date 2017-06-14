@@ -42,16 +42,16 @@ export const deleteUser = (userId) =>
   dispatch =>
     axios.delete(`/api/users/${userId}`)
       .then(() => {
-        dispatch(removeUser(userId))
+        dispatch(removeUser(userId), status)
       })
       .catch(err => console.error)
-export const updateUser = () =>
+export const updateUser = (userId, status) =>
 dispatch =>
-    axios.get('/api/users')
+    axios.put(`/api/users/promote/${userId}`, status)
       .then(response => {
-        console.log( dispatch)
+        console.log( "DSDSDSDS")
         const users = response.data
-        store.dispatch(update(users))
+        dispatch(update(users))
       })
       .catch(err => console.error)
 export default userReducer

@@ -50,6 +50,12 @@ const onAllOrdersEnter = () => {
 
 }
 
+const onUsersEnter = () => {
+  store.dispatch(fetchUsers())
+}
+
+
+
 render(
 
   <Provider store={store}>
@@ -59,7 +65,7 @@ render(
         <Route path="/foobar" component={NavBar} onEnter={onCartEnter} >
           <Route path="/products" component={Products} onEnter={onProductsEnter}/>
           <Route path="/products/:productId" component={Product} />
-          <Route path="/users" component={Users} />
+          <Route path="/users" component={Users} onEnter={onUsersEnter}/>
           <Route path="/users/:userId" component={SingleUser} />
           <Route path="/cart" component={Cart} onEnter={onCartEnter} />
           <Route path="/currentUserOrders" component={Orders} onEnter={onOrdersEnter}/>
