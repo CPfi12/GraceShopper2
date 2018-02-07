@@ -22,7 +22,7 @@ module.exports = require('express').Router()
 .then((orders) => {
       if (!orders) res.status(404).send('page Not Found')
       else res.send(orders)
-    })
+    }) //
     .catch(next))
 
 .get('/:id',
